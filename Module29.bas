@@ -23,10 +23,14 @@ Sub バックアップ()
     Save_File = Application.GetSaveAsFilename(Save_Dir, _
          FileFilter:="Excelファイル,*.xls,すべてのファイル,*.*")
         
-     ActiveWorkbook.SaveAs
-        
+     ActiveWorkbook.SaveAs Filename:=Save_File, _
+                           FileFormat:=xlOpenXMLWorkbookMacroEnabled, _
+                           ReadOnlyRecommended:=False, _
+                           CreateBackup:=False
 
-    Application.Quit
+                           
+
+    
          
 End Sub
 Sub Macro1()
